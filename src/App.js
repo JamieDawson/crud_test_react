@@ -1,55 +1,40 @@
 import { useState } from "react";
+import List from "./Components/List";
+import Form from "./Components/Form";
 import "./App.css";
+
+/*
+TODO:
+fix update funcitonality by passing the username, setusername, userage, setuserage to the list and drilling it to the update function.
+
+*/
 
 function App() {
   const [userName, setUserName] = useState("");
   const [userAge, setUserAge] = useState("");
 
   const [people, setPeople] = useState([
-    { name: "Person 1", age: "14", clicked: false },
-    { name: "Person 2", age: "24", clicked: false },
-    { name: "Person 3", age: "22", clicked: false },
+    { name: "Person 1", age: "14" },
+    { name: "Person 2", age: "24" },
+    { name: "Person 3", age: "22" },
   ]);
-
-  const addName = (e) => {
-    e.preventDefault();
-
-    const newObject = { name: userName, age: userAge };
-    setPeople([...people, newObject]);
-  };
-
-  const deleteItem = (index) => {
-    const newPeople = [...people];
-    newPeople.splice(index, 1);
-    setPeople(newPeople);
-  };
-
-  const updateItem = (index) => {
-    const newPeople = [...people];
-    if (!userName || !userAge) return;
-
-    newPeople[index] = { ...newPeople[index], name: userName, age: userAge };
-    setPeople(newPeople);
-  };
 
   return (
     <div className="App">
-      <form onSubmit={addName}>
-        <input
-          placeholder="name"
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <input placeholder="age" onChange={(e) => setUserAge(e.target.value)} />
-        <button>Add name and age</button>
-      </form>
-
-      {people.map((person, index) => (
-        <div key={index}>
-          {person.name}
-          <button onClick={() => deleteItem(index)}>Delete</button>
-          <button onClick={() => updateItem(index)}>Update</button>
-        </div>
-      ))}
+      <List
+        people={people}
+        setPeople={setPeople}
+        userName={userName}
+        userAge={userAge}
+      />
+      <Form
+        people={people}
+        setPeople={setPeople}
+        userName={userName}
+        setUserName={setUserName}
+        userAge={userAge}
+        setUserAge={setUserAge}
+      />
     </div>
   );
 }
