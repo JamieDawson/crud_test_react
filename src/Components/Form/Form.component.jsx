@@ -1,6 +1,6 @@
 // src/components/Form.component.jsx
 import { useState } from "react";
-import AddUser from "../AddUser";
+import AddUser from "../../Utils/AddUser";
 
 const Form = ({
   people,

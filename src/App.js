@@ -3,14 +3,8 @@ import List from "./Components/List";
 import Form from "./Components/Form";
 import "./App.css";
 
-/*
-TODO:
-fix update funcitonality by passing the username, setusername, userage, setuserage to the list and drilling it to the update function.
-
-*/
-
 function App() {
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState("a");
   const [userAge, setUserAge] = useState("");
 
   const [people, setPeople] = useState([
@@ -21,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+      <div>learn react</div>
       <List
         people={people}
         setPeople={setPeople}

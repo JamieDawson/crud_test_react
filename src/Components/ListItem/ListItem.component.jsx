@@ -1,5 +1,5 @@
-import DeleteUser from "../DeleteUser/";
-import UpdateUser from "../UpdateUser/";
+import DeleteUser from "../../Utils/DeleteUser";
+import UpdateUser from "../../Utils/UpdateUser";
 import ListButton from "../ListButton";
 
 const ListItem = ({

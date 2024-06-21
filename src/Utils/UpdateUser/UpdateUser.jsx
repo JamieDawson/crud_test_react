@@ -5,3 +5,5 @@ const UpdateUser = (index, people, setPeople, userName, userAge) => {
 };
 
 export default UpdateUser;
+
+//You don't destructure the props because this is a FUNCTION, not a COMPONENT.
