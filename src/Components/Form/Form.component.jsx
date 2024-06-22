@@ -1,15 +1,12 @@
 // src/components/Form.component.jsx
-import { useState } from "react";
+import { useContext, useState } from "react";
 import AddUser from "../../Utils/AddUser";
+import PeopleContext from "../../PeopleContext";
 
-const Form = ({
-  people,
-  setPeople,
-  userName,
-  setUserName,
-  userAge,
-  setUserAge,
-}) => {
+const Form = () => {
+  const { people, setPeople, userName, setUserName, userAge, setUserAge } =
+    useContext(PeopleContext);
+
   const handleAddUser = (e) => {
     e.preventDefault();
     const newUser = { name: userName, age: userAge };

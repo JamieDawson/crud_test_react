@@ -1,16 +1,12 @@
 import DeleteUser from "../../Utils/DeleteUser";
 import UpdateUser from "../../Utils/UpdateUser";
 import ListButton from "../ListButton";
+import PeopleContext from "../../PeopleContext";
+import { useContext } from "react";
 
-const ListItem = ({
-  name,
-  age,
-  index,
-  people,
-  setPeople,
-  userName,
-  userAge,
-}) => {
+const ListItem = ({ name, age, index }) => {
+  const { people, setPeople, userName, userAge } = useContext(PeopleContext);
+
   const handleDeleteUser = () => {
     DeleteUser(index, people, setPeople);
   };

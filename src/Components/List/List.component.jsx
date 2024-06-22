@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import ListItem from "../ListItem";
+import PeopleContext from "../../PeopleContext.js";
 
-const List = ({ people, setPeople, userName, userAge }) => {
+const List = () => {
+  const { people } = useContext(PeopleContext);
+
   return (
     <ul>
       {people.map((person, index) => (
@@ -10,10 +13,6 @@ const List = ({ people, setPeople, userName, userAge }) => {
           name={person.name}
           age={person.age}
           index={index}
-          people={people}
-          setPeople={setPeople}
-          userName={userName}
-          userAge={userAge}
         />
       ))}
     </ul>
