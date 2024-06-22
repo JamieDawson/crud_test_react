@@ -1,15 +1,9 @@
 import React from "react";
 import ListItem from "../ListItem";
 
-const List = ({
-  people,
-  setPeople,
-  userName,
-
-  userAge,
-}) => {
+const List = ({ people, setPeople, userName, userAge }) => {
   return (
-    <>
+    <ul>
       {people.map((person, index) => (
         <ListItem
           key={index}
@@ -22,7 +16,7 @@ const List = ({
           userAge={userAge}
         />
       ))}
-    </>
+    </ul>
   );
 };
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import List from "./Components/List";
-import Form from "./Components/Form";
+import List from "./Components/List/index.jsx";
+import Form from "./Components/Form/index.jsx";
 import "./App.css";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>learn react</div>
+      <h1>learn react</h1>
       <List
         people={people}
         setPeople={setPeople}

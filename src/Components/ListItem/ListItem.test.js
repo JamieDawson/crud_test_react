@@ -24,4 +24,9 @@ test('finds the text "Delete" in the button', () => {
 
   const deleteButton = screen.getByText("Delete");
   expect(deleteButton).toBeInTheDocument();
+
+  //Update to click button with fireEvent
+  //Text is rendering or what is provided as a prop.
+  //Name of the person is present and being deleted.
+  //Can get both buttons and it properly calls mockSetPeople!
 });

@@ -20,13 +20,15 @@ const ListItem = ({
   };
 
   return (
-    <>
-      <div>
+    <li>
+      <div className="allinfo">
         Name: {name}, Age: {age}
-        <ListButton onClick={handleDeleteUser}>Delete</ListButton>
-        <ListButton onClick={handleUpdateUser}>Update</ListButton>
+        <div className="buttonstyles">
+          <ListButton onClick={handleDeleteUser}>Delete</ListButton>
+          <ListButton onClick={handleUpdateUser}>Update</ListButton>
+        </div>
       </div>
-    </>
+    </li>
   );
 };
 
