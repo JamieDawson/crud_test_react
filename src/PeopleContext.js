@@ -5,6 +5,7 @@ const PeopleContext = createContext();
 export const PeopleProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
   const [userAge, setUserAge] = useState("");
+
   const [people, setPeople] = useState([
     { name: "Person 1", age: "14" },
     { name: "Person 2", age: "24" },

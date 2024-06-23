@@ -11,6 +11,8 @@ const Form = () => {
     e.preventDefault();
     const newUser = { name: userName, age: userAge };
     AddUser(newUser, people, setPeople);
+    setUserName("");
+    setUserAge("");
   };
 
   return (

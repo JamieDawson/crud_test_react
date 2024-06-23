@@ -1,18 +1,14 @@
-import DeleteUser from "../../Utils/DeleteUser";
-import UpdateUser from "../../Utils/UpdateUser";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import ListButton from "../ListButton";
 import PeopleContext from "../../PeopleContext";
-import { useContext } from "react";
+import DeleteUser from "../../Utils/DeleteUser";
 
-const ListItem = ({ name, age, index }) => {
-  const { people, setPeople, userName, userAge } = useContext(PeopleContext);
+const ListItem = ({ name, age, index, people }) => {
+  const { setPeople } = useContext(PeopleContext);
 
   const handleDeleteUser = () => {
     DeleteUser(index, people, setPeople);
-  };
-
-  const handleUpdateUser = () => {
-    UpdateUser(index, people, setPeople, userName, userAge);
   };
 
   return (
@@ -20,8 +16,10 @@ const ListItem = ({ name, age, index }) => {
       <div className="allinfo">
         Name: {name}, Age: {age}
         <div className="buttonstyles">
+          <Link to={`/update/${index}`}>
+            <ListButton>Update</ListButton>
+          </Link>
           <ListButton onClick={handleDeleteUser}>Delete</ListButton>
-          <ListButton onClick={handleUpdateUser}>Update</ListButton>
         </div>
       </div>
     </li>

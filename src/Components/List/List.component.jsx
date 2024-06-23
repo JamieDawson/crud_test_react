@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ListItem from "../ListItem";
-import PeopleContext from "../../PeopleContext.js";
+import PeopleContext from "../../PeopleContext";
 
 const List = () => {
   const { people } = useContext(PeopleContext);
@@ -13,6 +13,7 @@ const List = () => {
           name={person.name}
           age={person.age}
           index={index}
+          people={people}
         />
       ))}
     </ul>

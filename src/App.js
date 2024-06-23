@@ -1,30 +1,31 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import List from "./Components/List/index.jsx";
 import Form from "./Components/Form/index.jsx";
+import UpdateUserPage from "./Pages/UpdateUserPage/UpdateUserPage.jsx";
 import { PeopleProvider } from "./PeopleContext.js";
 import "./App.css";
 
 function App() {
   return (
     <PeopleProvider>
-      <div className="App">
-        <h1>learn react</h1>
-        <List />
-        <Form />
-      </div>
+      <Router>
+        <div className="App">
+          <h1>learn react</h1>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/update/:index" element={<UpdateUserPage />} />
+          </Routes>
+        </div>
+      </Router>
     </PeopleProvider>
   );
 }
 
-export default App;
+const Home = () => (
+  <>
+    <Form />
+    <List />
+  </>
+);
 
-/*
-CRUD:
-1) Create:
-Make a form that pushes a name and age to the array of objects.
-2) Read:
-3) Update:
-Make some way for them to be selected so that when they are selected, the data can be changed.
-4) Delete:
-My state can be an array of objects. I need to use .splice on the object to remove it.
-*/
+export default App;
